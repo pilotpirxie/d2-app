@@ -5,12 +5,7 @@ import {
     NavbarToggler,
     NavbarBrand,
     Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem } from 'reactstrap';
+    NavItem} from 'reactstrap';
 import FontAwesome from 'react-fontawesome';
 import {Link} from 'react-router-dom';
 
@@ -37,16 +32,16 @@ export default class HeaderComponent extends React.Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <NavLink href="#"><Link to={'/hottest'}>Hottest</Link></NavLink>
+                                <div className={'nav-link'} href="#"><Link to={'/hottest'}>Hottest</Link></div>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="#"><Link to={'/latest'}>Latest</Link></NavLink>
+                                <div className={'nav-link'} href="#"><Link to={'/latest'}>Latest</Link></div>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="#"><Link to={'/featured'}>Featured</Link></NavLink>
+                                <div className={'nav-link'} href="#"><Link to={'/featured'}>Featured</Link></div>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="#"><Link to={'/add'}>Add new</Link></NavLink>
+                                <div className={'nav-link'} href="#"><Link to={'/add'}>Add new</Link></div>
                             </NavItem>
                         </Nav>
                     </Collapse>

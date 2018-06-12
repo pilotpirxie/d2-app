@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, Badge, CardSubtitle, Button } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, Badge, CardSubtitle, Button, Col } from 'reactstrap';
 import FontAwesome from 'react-fontawesome';
 
 import PropTypes from 'prop-types';
 
 class HomeListItemComponent extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         let color = (this.props.active === true) ? 'danger' : 'secondary';
 
         return (
-            <div className="HomeListItemComponent">
+            <Col sm={6} md={4}>
                 <Card style={{marginBottom: '20px', marginTop: '20px'}}>
                     <CardImg top width="100%" height="300px" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Test&w=300&h=350" alt="Card image cap" />
                     <CardBody>
@@ -24,7 +20,7 @@ class HomeListItemComponent extends Component {
                         <a href={this.props.pathURL} target={'_blank'}><Button color={color} className={'form-control'}><b>Get deal</b> <FontAwesome name={'external-link'} /></Button></a>
                     </CardBody>
                 </Card>
-            </div>
+            </Col>
         );
     }
 }
