@@ -10,31 +10,32 @@ class HomeListItemComponent extends Component {
     }
 
     render() {
+        let color = (this.props.active === true) ? 'danger' : 'secondary';
+
         return (
             <div className="HomeListItemComponent">
-                <Card>
-                    <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                <Card style={{marginBottom: '20px', marginTop: '20px'}}>
+                    <CardImg top width="100%" height="300px" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Test&w=300&h=350" alt="Card image cap" />
                     <CardBody>
                         <CardTitle><b>{this.props.itemName}</b></CardTitle>
-                        <CardSubtitle><h5><Badge color={'danger'}>{this.props.price}</Badge><small> | {this.props.brandName}</small></h5></CardSubtitle>
+                        <CardSubtitle style={{fontSize: '22px'}}><Badge style={{padding: '10px'}} color={color}>{this.props.price}</Badge><small> | {this.props.brandName}</small></CardSubtitle>
                         <hr />
                         <CardText>{this.props.description}</CardText>
-                        <Button color={'danger'} className={'form-control'}>Open <FontAwesome name={'link'} /></Button>
+                        <a href={this.props.pathURL} target={'_blank'}><Button color={color} className={'form-control'}><b>Get deal</b> <FontAwesome name={'external-link'} /></Button></a>
                     </CardBody>
                 </Card>
-
             </div>
         );
     }
 }
 
-const {string, number} = PropTypes;
+const {string, bool} = PropTypes;
 
 HomeListItemComponent.propTypes = {
     itemName: string,
     brandName: string,
     price: string,
-    votes: number,
+    active: bool,
     pathURL: string
 };
 

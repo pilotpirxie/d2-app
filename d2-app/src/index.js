@@ -23,6 +23,7 @@ import ItemContainer from './containers/ItemContainer';
 // reactstrap styles
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css'
+import './index.css';
 
 // reducers
 // import HomeReducer from './reducers/HomeReducer';

@@ -6,15 +6,17 @@ import FooterComponent from '../components/FooterComponent';
 class AppActivityContainer extends Component {
   render() {
     return (
-      <Container fluid={true}>
-        <Row noGutters={true}>
-          <Col>
+        <div>
             <HeaderComponent />
-            {this.props.children}
+            <Container fluid={true}>
+                <Row noGutters={true}>
+                    <Col>
+                        {this.props.children}
+                    </Col>
+                </Row>
+            </Container>
             <FooterComponent />
-          </Col>
-        </Row>
-      </Container>
+        </div>
     );
   }
 }
