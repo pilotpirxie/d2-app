@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {fetchItems} from "../actions/ItemAction";
 import HomeListItemComponent from '../components/HomeListItemComponent';
 import { Row } from 'reactstrap';
 
 class HomeContainer extends Component {
+    constructor(props){
+        super(props);
+
+        this.handleFetchItems = this.props.fetchItems;
+    }
+
+    componentDidMount() {
+        this.handleFetchItems();
+    }
+
     render() {
         return (
             <div className="App" style={{marginTop: '20px'}}>
@@ -35,4 +48,18 @@ class HomeContainer extends Component {
     }
 }
 
-export default HomeContainer;
+const mapStateToProps = (state) => {
+    return {
+        items: state.itemsReducer.items,
+        isWorking: state.itemsReducer.isWorking,
+        error: state.itemsReducer.error
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({
+        fetchItems
+    }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);
