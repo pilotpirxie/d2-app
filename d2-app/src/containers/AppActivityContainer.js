@@ -8,7 +8,7 @@ class AppActivityContainer extends Component {
     return (
         <div>
             <HeaderComponent />
-            <Container fluid={true}>
+            <Container >
                 <Row noGutters={true}>
                     <Col>
                         {this.props.children}

@@ -9,7 +9,7 @@ class HomeListItemComponent extends Component {
         let color = (this.props.active === true) ? 'danger' : 'secondary';
 
         return (
-            <Col sm={6} md={4}>
+            <Col sm={6} md={4} lg={3} xl={3}>
                 <Card style={{marginBottom: '20px', marginTop: '20px'}}>
                     <CardImg top width="100%" height="300px" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Test&w=300&h=350" alt="Card image cap" />
                     <CardBody>
