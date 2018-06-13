@@ -1,5 +1,6 @@
 export default {
-    host: '',
-    fetchEndpoint: '',
-    submitEndpoint: ''
+    host: 'http://localhost:8080',
+    fetchAllEndpoint: '/items',
+    fetchSingleEndpoint: '/items/',
+    submitEndpoint: '/items'
 };

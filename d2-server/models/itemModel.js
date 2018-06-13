@@ -7,13 +7,39 @@ const Item = sequelize.define('d2_items', {
         primaryKey: true,
         autoIncrement: true
     },
-    price: Sequelize.TEXT,
-    active: Sequelize.BOOLEAN,
-    path_url: Sequelize.TEXT,
-    brand_name: Sequelize.TEXT,
-    item_name: Sequelize.TEXT,
-    create_date: Sequelize.DATE,
-    item_image: Sequelize.TEXT
+    price: {
+        type: Sequelize.TEXT,
+        allowNull: false
+    },
+    active: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: 0,
+        allowNull: false
+    },
+    path_url: {
+        type: Sequelize.TEXT,
+        allowNull: false
+    },
+    brand_name: {
+        type: Sequelize.TEXT,
+        allowNull: false
+    },
+    item_name: {
+        type: Sequelize.TEXT,
+        allowNull: false
+    },
+    create_date: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW
+    },
+    item_image: {
+        type: Sequelize.TEXT,
+        allowNull: false
+    },
+    description: {
+        type: Sequelize.TEXT,
+        allowNull: false
+    }
 }, {
     timestamps: false,
     underscored: true

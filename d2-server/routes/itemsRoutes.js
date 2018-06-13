@@ -21,11 +21,9 @@ module.exports = {
         if (req.body) {
             Item.create({
                 price: req.body.price,
-                active: 0,
                 path_url: req.body.path_url,
                 brand_name: req.body.brand_name,
                 item_name: req.body.item_name,
-                create_date: (new Date()),
                 item_image: req.body.item_image
             }).then(item => {
                 res.send(item);
