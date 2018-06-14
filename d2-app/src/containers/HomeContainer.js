@@ -17,31 +17,24 @@ class HomeContainer extends Component {
     }
 
     render() {
+        const {items} = this.props;
         return (
             <div className="App" style={{marginTop: '20px'}}>
                 <h2 style={{textAlign: 'center'}}>Hottest</h2>
                 <Row noGutters={true}>
-                <HomeListItemComponent itemName={'Reebook Classic'}
-                                       brandName={'Reebook'}
-                                       price={'199,99zł'}
-                                       description={'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.'}
-                                       pathURL={'https://google.com'}
-                                       active={true}
-                                       key={1}/>
-                <HomeListItemComponent itemName={'Reebook Classic'}
-                                       brandName={'Reebook'}
-                                       price={'199,99zł'}
-                                       description={'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.'}
-                                       pathURL={'https://google.com'}
-                                       active={true}
-                                       key={2}/>
-                    <HomeListItemComponent itemName={'Reebook Classic'}
-                                       brandName={'Reebook'}
-                                       price={'199,99zł'}
-                                       description={'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.'}
-                                       pathURL={'https://google.com'}
-                                       active={true}
-                                       key={3}/>
+                    {items.map(item => {
+                        let active = Date.now() < Date.parse(item.expire_at);
+                        console.log(active);
+                       return <HomeListItemComponent
+                                itemName={item.item_name}
+                                brandName={item.brand_name}
+                                price={item.price}
+                                description={item.description}
+                                pathURL={item.path_url}
+                                active={active}
+                                image={item.item_image}
+                                key={item.ID}/>
+                    })}
                 </Row>
             </div>
         );

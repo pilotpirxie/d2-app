@@ -24,7 +24,8 @@ module.exports = {
                 path_url: req.body.path_url,
                 brand_name: req.body.brand_name,
                 item_name: req.body.item_name,
-                item_image: req.body.item_image
+                item_image: req.body.item_image,
+                expire_at: req.body.expire_at
             }).then(item => {
                 res.send(item);
             }).catch(err => {

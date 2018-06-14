@@ -11,7 +11,7 @@ class HomeListItemComponent extends Component {
         return (
             <Col sm={6} md={4} lg={3} xl={3}>
                 <Card style={{marginBottom: '20px', marginTop: '20px'}}>
-                    <CardImg top width="100%" height="300px" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Test&w=300&h=350" alt="Card image cap" />
+                    <CardImg top width="100%" height="300px" src={this.props.image} alt="Card image cap" />
                     <CardBody>
                         <CardTitle><b>{this.props.itemName}</b></CardTitle>
                         <CardSubtitle style={{fontSize: '22px'}}><Badge style={{padding: '10px'}} color={color}>{this.props.price}</Badge><small> | {this.props.brandName}</small></CardSubtitle>
@@ -32,7 +32,8 @@ HomeListItemComponent.propTypes = {
     brandName: string,
     price: string,
     active: bool,
-    pathURL: string
+    pathURL: string,
+    image: string
 };
 
 export default HomeListItemComponent;

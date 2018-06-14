@@ -39,6 +39,10 @@ const Item = sequelize.define('d2_items', {
     description: {
         type: Sequelize.TEXT,
         allowNull: false
+    },
+    expire_at: {
+        type: Sequelize.DATE,
+        allowNull: false
     }
 }, {
     timestamps: false,
