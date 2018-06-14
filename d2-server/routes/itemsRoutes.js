@@ -25,7 +25,8 @@ module.exports = {
                 brand_name: req.body.brand_name,
                 item_name: req.body.item_name,
                 item_image: req.body.item_image,
-                expire_at: req.body.expire_at
+                expire_at: req.body.expire_at,
+                description: req.body.description
             }).then(item => {
                 res.send(item);
             }).catch(err => {

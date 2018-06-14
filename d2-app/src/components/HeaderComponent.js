@@ -27,18 +27,12 @@ export default class HeaderComponent extends React.Component {
         return (
             <div>
                 <Navbar color="danger" dark={true} expand="md">
-                    <NavbarBrand href="/"><b><FontAwesome name={'fire'} /> AppName</b></NavbarBrand>
+                    <NavbarBrand href="#"><Link to={'/'}><b><FontAwesome name={'fire'} /> AppName</b></Link></NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <div className={'nav-link'} href="#"><Link to={'/hottest'}>Hottest</Link></div>
-                            </NavItem>
-                            <NavItem>
-                                <div className={'nav-link'} href="#"><Link to={'/latest'}>Latest</Link></div>
-                            </NavItem>
-                            <NavItem>
-                                <div className={'nav-link'} href="#"><Link to={'/featured'}>Featured</Link></div>
+                                <div className={'nav-link'} href="#"><Link to={'/'}>Home</Link></div>
                             </NavItem>
                             <NavItem>
                                 <div className={'nav-link'} href="#"><Link to={'/add'}>Add new</Link></div>

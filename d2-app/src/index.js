@@ -8,6 +8,7 @@ import registerServiceWorker from './utils/registerServiceWorker';
 import AppActivityContainer from './containers/AppActivityContainer';
 import HomeContainer from './containers/HomeContainer';
 import ItemContainer from './containers/ItemContainer';
+import SubmitFormContainer from './containers/SubmitFormContainer';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css'
@@ -20,8 +21,9 @@ ReactDOM.render(
         <ConnectedRouter history={history}>
             <AppActivityContainer>
                 <Switch>
-                    <Route path="/" component={HomeContainer} />
                     <Route path="/item/:id/" component={ItemContainer} />
+                    <Route path="/add" component={SubmitFormContainer} />
+                    <Route path="/" component={HomeContainer} />
                 </Switch>
             </AppActivityContainer>
         </ConnectedRouter>

@@ -10,8 +10,8 @@ class HomeListItemComponent extends Component {
 
         return (
             <Col sm={6} md={4} lg={3} xl={3}>
-                <Card style={{marginBottom: '20px', marginTop: '20px'}}>
-                    <CardImg top width="100%" height="300px" src={this.props.image} alt="Card image cap" />
+                <Card style={{marginBottom: '10px', marginTop: '10px'}}>
+                    <CardImg top width="100%" src={this.props.image} alt="Card image cap" />
                     <CardBody>
                         <CardTitle><b>{this.props.itemName}</b></CardTitle>
                         <CardSubtitle style={{fontSize: '22px'}}><Badge style={{padding: '10px'}} color={color}>{this.props.price}</Badge><small> | {this.props.brandName}</small></CardSubtitle>
