@@ -3,7 +3,6 @@ import {
     Collapse,
     Navbar,
     NavbarToggler,
-    NavbarBrand,
     Nav,
     NavItem} from 'reactstrap';
 import FontAwesome from 'react-fontawesome';
@@ -27,7 +26,7 @@ export default class HeaderComponent extends React.Component {
         return (
             <div>
                 <Navbar color="danger" dark={true} expand="md">
-                    <NavbarBrand href="#"><Link to={'/'}><b><FontAwesome name={'fire'} /> AppName</b></Link></NavbarBrand>
+                    <div className={'navbar-brand'} href="#"><Link to={'/'}><b><FontAwesome name={'fire'} /> AppName</b></Link></div>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>

@@ -20,7 +20,7 @@ class HomeContainer extends Component {
         const {items} = this.props;
         return (
             <div className="App" style={{marginTop: '20px'}}>
-                <h2 style={{textAlign: 'center'}}>Hottest</h2>
+                <h2 style={{textAlign: 'center'}}>Latest</h2>
                 <Row noGutters={true}>
                     {items.map(item => {
                         let active = Date.now() < Date.parse(item.expire_at);

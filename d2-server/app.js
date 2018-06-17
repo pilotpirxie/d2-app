@@ -1,4 +1,5 @@
 const restify = require('restify');
+const corsMiddleware = require('restify-cors-middleware')
 
 const server = restify.createServer({
     name: 'd2-server',
@@ -13,12 +14,12 @@ server.use(restify.plugins.bodyParser({
     mapParams: true
 }));
 
-server.use((req,res,next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-    return next();
+const cors = corsMiddleware({
+    origins: ['*']
 });
+
+server.pre(cors.preflight);
+server.use(cors.actual);
 
 const itemsRoutes = require('./routes/itemsRoutes');
 server.get('/items', itemsRoutes.getAll);
