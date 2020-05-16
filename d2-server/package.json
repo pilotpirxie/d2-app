@@ -14,6 +14,6 @@
     "pg-hstore": "^2.3.2",
     "restify": "^7.2.1",
     "restify-cors-middleware": "^1.1.1",
-    "sequelize": "^4.37.10"
+    "sequelize": "^5.15.1"
   }
 }
